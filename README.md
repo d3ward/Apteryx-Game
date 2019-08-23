@@ -9,6 +9,6 @@ see the [source](https://cs.chromium.org/chromium/src/components/neterror/resour
 
 ![chrome offline game cast](assets/screenshot.gif)
 
-## Interesting Forks/In Chinese, we call it 「花样玩法」
+## 
 
 All rights of the original game's code belong to the Chromium team. Thanks to [Wayou Liu](https://github.com/wayou) for extracting the game from Chrome's files and making it available on Github - [Link to original repository](https://github.com/wayou/t-rex-runner).
