@@ -61,8 +61,8 @@
 </body>
 <script>
         var theme = parseInt(localStorage.gameTheme);
-        if(localStorage.gameTheme)theme=0;
-        localStorage.gameTheme=theme;
+        if(!localStorage.gameTheme)theme=0;
+        localStorage.gameTheme=JSON.stringify(theme);
         var bodybg=document.getElementById("t");
         var btnTS=document.getElementById("theme-switch");
         var clrdsnd=document.getElementById("colored-sand");
