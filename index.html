@@ -1,52 +1,18 @@
 <!doctype html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <title>Apteryx Game</title>
+    <link rel="icon" href="src/icon.png" type="image" sizes="16x16">
     <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
 </head>
-<style>
-    body{
-        overflow: hidden;
-    }
-    #theme-switch{
-        position: absolute;
-        top:5px;
-        left: 5px;
-        background: black;
-        border: 2px solid #fff;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        z-index: 100;
-    }
-    #colored-sand{
-        width: 100%;
-        height: 100%;
-        background: #a76720;
-        position: relative;
-        top: -12px;
-    }
-    @media screen and (min-width: 884px) {
-        #colored-sand{
-        height: 100%;
-        position: relative;
-        top: -122px;
-        }
-    }
-</style>
 <body id="t" class="offline" style="background:#141852">
-    <div id="theme-switch" onclick="changeTheme();"> </div>
     <div id="main-frame-error" class="interstitial-wrapper">
-        <div id="main-content">
-            <div class="icon icon-offline" alt=""></div>
-        </div>
+        <div id="main-content"><div class="icon icon-offline" alt=""></div></div>
         <div id="offline-resources">
-            <img id="offline-resources-1x" src="">
-            <img id="offline-resources-2x" src="">
+            <img id="offline-resources-1x" src="assets/100x_classic.png">
+            <img id="offline-resources-2x" src="assets/200x_classic.png">
             <template id="audio-resources">
                 <audio id="offline-sound-press"
                     src="data:audio/mpeg;base64,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"></audio>
@@ -58,55 +24,124 @@
         </div>
     </div>
     <div id="colored-sand"></div>
+    <script>
+        var rel = false;
+        function dismBox() {
+            document.getElementById("lrt").classList.toggle("show-lrt");
+            if (rel) location.reload();
+        }
+        function del(){
+            document.getElementById("lrt_body").innerHTML = "";
+            localStorage.clear();
+            rel=true;
+        }
+    </script>
+    <div id="lrt" class="lrt">
+        <div class="lrt_cnt">
+            <label>Theme </label> <div id="theme-switch" onclick="changeTheme();"> </div>
+            <label>Score History</label>    
+            <div id="lrt_body"></div><br>
+            <hr>
+            <a href="https://github.com/d3ward/Apteryx-Game">
+                <svg id="gitlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16 4C9.4 4 4 9.4 4 16 4 21.3 7.4 25.8 12.2 27.4 12.8 27.5 13 27.1 13 26.8 13 26.5 13 25.8 13 24.8 9.7 25.5 9 23.2 9 23.2 8.4 21.8 7.6 21.4 7.6 21.4 6.5 20.7 7.7 20.7 7.7 20.7 8.9 20.8 9.6 21.9 9.6 21.9 10.6 23.7 12.4 23.2 13 22.9 13.2 22.1 13.5 21.6 13.8 21.3 11.1 21 8.3 20 8.3 15.4 8.3 14.1 8.8 13 9.6 12.2 9.5 11.9 9 10.6 9.7 9 9.7 9 10.7 8.7 13 10.2 14 9.9 15 9.8 16 9.8 17 9.8 18 9.9 19 10.2 21.3 8.7 22.3 9 22.3 9 23 10.6 22.5 11.9 22.4 12.2 23.2 13 23.7 14.1 23.7 15.4 23.7 20 20.8 21 18.2 21.3 18.6 21.7 19 22.4 19 23.5 19 25.1 19 26.4 19 26.8 19 27.1 19.2 27.5 19.8 27.4 24.6 25.8 28 21.3 28 16 28 9.4 22.6 4 16 4Z"/></svg>
+             Made with ❤️ by d3ward
+            </a>
+            <div class="lrt_ft"><button onclick="del();"> Reset  </button><button onclick="dismBox();"> Close  </button></div>
+        </div>
+    </div>
+    <div id="lb"><svg id="lbsvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M4 7L4 9 28 9 28 7ZM4 15L4 17 28 17 28 15ZM4 23L4 25 28 25 28 23Z" /></svg></div>
 </body>
-<script>
+    <script>
+        var lboard = JSON.parse(localStorage.getItem("lb"));
+        console.log(lboard);
+        if (lboard == null) lboard = [];
         var theme = parseInt(localStorage.gameTheme);
-        if(!localStorage.gameTheme)theme=0;
-        localStorage.gameTheme=JSON.stringify(theme);
-        var bodybg=document.getElementById("t");
-        var btnTS=document.getElementById("theme-switch");
-        var clrdsnd=document.getElementById("colored-sand");
-        var img2=document.getElementById("offline-resources-2x");
-        var img1=document.getElementById("offline-resources-1x");
-        function classicTheme(){
-            clrdsnd.style.display="none";
-            bodybg.style.background="#fff";
-            btnTS.style.background="#fff";
-            btnTS.style.borderColor="#000";
-            img2.src="assets/default_200_percent/200-offline-sprite-classic.png";
+        if (!localStorage.gameTheme) {
+            theme = 0;
+            localStorage.gameTheme = JSON.stringify(theme);
         }
-        function darkTheme(){
-            clrdsnd.style.display="none";
-            bodybg.style.background="#333";
-            btnTS.style.background="#000";
-            btnTS.style.borderColor="#fff";
-            img2.src="assets/default_200_percent/200-offline-sprite-dark.png";
+        var hs = lboard[0],maxScore=0;
+        if(hs!=undefined)maxScore = hs[0].v;
+        var bodybg = document.getElementById("t");
+        var lbsvg = document.getElementById("lbsvg");
+        var btnTS = document.getElementById("theme-switch");
+        var clrdsnd = document.getElementById("colored-sand");
+        var img2 = document.getElementById("offline-resources-2x");
+        var img1 = document.getElementById("offline-resources-1x");
+        document.getElementById("lb").onclick = () => {document.getElementById("lrt").classList.toggle("show-lrt");};
+        document.getElementById("lrt").addEventListener('click', function(e) {if (e.target == this)dismBox();});
+        function setlbdiv() {
+            var txt = '<table>';
+            lboard.forEach(el => {txt += "<tr><td>" + el[0].dt + " </td><td>" + el[0].v + "</td></tr>";});
+            document.getElementById("lrt_body").innerHTML = txt + "</table>";
         }
-        function colorfulTheme(){
-            clrdsnd.style.display="inline-block";
-            bodybg.style.background="#141852";
-            btnTS.style.background="linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)";
-            btnTS.style.borderColor="#fff";
-            img2.src="assets/default_200_percent/200-offline-sprite-colorful.png";
-        }
-        function changeTheme(){
-            if(theme>1)theme=0;
-            else theme=theme+1;
-            console.log(" Theme : "+theme);
-            localStorage.gameTheme=theme;
-            location.reload();
-        }
-        function applyTheme(){
-            if(theme==0){
-                classicTheme();
-            }else if(theme==1){
-                darkTheme();
-            }else if(theme==2){
-                colorfulTheme();
-            }else{
-                classicTheme();
+        setlbdiv();
+        function setLB(v) {
+            if (v > maxScore) {
+                var today = new Date();
+                var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+                var dateTime = date;
+                maxScore = v;
+                lboard.push([{'v': v,'dt': dateTime}]);
+                lboard.sort(function (a, b) {return b[0].v - a[0].v;});
+                localStorage.setItem("lb", JSON.stringify(lboard));
+                setlbdiv();
             }
         }
+        function classicTheme() {
+            clrdsnd.style.display = "none";
+            bodybg.style.background = "#fff";
+            btnTS.style.background = "#fff";
+            btnTS.style.borderColor = "#000";
+            lbsvg.style.fill = "#333";
+            img2.src = "assets/200x_classic.png";
+            img1.src = "assets/100x_classic.png";
+        }
+        function darkTheme() {
+            clrdsnd.style.display = "none";
+            bodybg.style.background = "#333";
+            btnTS.style.background = "#333";
+            lbsvg.style.fill = "#fff";
+            btnTS.style.borderColor = "#fff";
+            img2.src = "assets/200x_dark.png";
+            img1.src = "assets/100x_dark.png";
+        }
+        function amoledTheme() {
+            clrdsnd.style.display = "none";
+            bodybg.style.background = "#000";
+            btnTS.style.background = "#000";
+            btnTS.style.borderColor = "#fff";
+            lbsvg.style.fill = "#fff";
+            img2.src = "assets/200x_dark.png";
+            img1.src = "assets/100x_dark.png";
+        }
+        function colorfulTheme() {
+            clrdsnd.style.display = "inline-block";
+            bodybg.style.background = "#141852";
+            btnTS.style.background = "linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)";
+            btnTS.style.borderColor = "#fff";
+            lbsvg.style.fill = "#fff";
+            img2.src = "assets/200x_color.png";
+            img1.src = "assets/100x_color.png";
+        }
+        function changeTheme() {
+            var rc=document.querySelector("div.runner-container");
+            if(rc)rc.parentNode.removeChild(rc);
+            if (theme > 2) theme = 0;
+            else theme = theme + 1;
+            console.log(" Theme : " + theme);
+            localStorage.gameTheme = theme;
+            rel = true;
+            applyTheme();
+        }
+        function applyTheme() {
+            if (theme == 0) {classicTheme();} 
+            else if (theme == 1) {darkTheme();} 
+            else if (theme == 2) {amoledTheme();}
+            else if (theme == 3) { colorfulTheme();}
+            else {classicTheme();}
+        }
         applyTheme();
-     </script>
+    </script>
+    <script src="index.js"></script>
 </html>
