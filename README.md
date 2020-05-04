@@ -7,20 +7,18 @@ This version instead of t-rex has a Kiwi bird , from the genus [Apteryx](https:/
 
 ## Preview
 
-![](src/preview.png)
+![Game Preview](src/preview.png)
 
+### Changelog
 
+#### [1.1] _04/05/2020_
 
-## Changelog
-
-##### [1.1] _04/05/2020_
-
-* Fixed game on desktop mode 
-* Improved the quality of the sprites 
-* Added history of scores 
+* Fixed game on desktop mode
+* Improved the quality of the sprites
+* Added history of scores
 * Added AMOLED theme, now there are 4 ( Classic, Dark , Amoled and Colorful)
 
-##### [1.0] _24/08/2019_
+#### [1.0] _24/08/2019_
 
 * Replace t-rex with Kiwi bird sprite
 * Added 3 themes : Classic, Dark, Colorful
