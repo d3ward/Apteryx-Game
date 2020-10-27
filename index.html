@@ -1,15 +1,19 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <title>Apteryx Game</title>
-    <link rel="icon" href="src/icon.png" type="image" sizes="16x16">
+    <link rel="icon" href="src/icon.svg" type="image" sizes="16x16">
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body id="t" class="offline" style="background:#141852">
     <div id="main-frame-error" class="interstitial-wrapper">
-        <div id="main-content"><div class="icon icon-offline" alt=""></div></div>
+        <div id="main-content">
+            <div class="icon icon-offline" alt=""></div>
+        </div>
         <div id="offline-resources">
             <img id="offline-resources-1x" src="assets/100x_classic.png">
             <img id="offline-resources-2x" src="assets/200x_classic.png">
@@ -26,122 +30,157 @@
     <div id="colored-sand"></div>
     <script>
         var rel = false;
+
         function dismBox() {
             document.getElementById("lrt").classList.toggle("show-lrt");
             if (rel) location.reload();
         }
-        function del(){
+
+        function del() {
             document.getElementById("lrt_body").innerHTML = "";
             localStorage.clear();
-            rel=true;
+            rel = true;
         }
     </script>
     <div id="lrt" class="lrt">
         <div class="lrt_cnt">
-            <label>Theme </label> <div id="theme-switch" onclick="changeTheme();"> </div>
-            <label>Score History</label>    
+            <label>Theme </label>
+            <div id="theme-switch" onclick="changeTheme();"> </div>
+            <label>Score History</label>
             <div id="lrt_body"></div><br>
             <hr>
             <a href="https://github.com/d3ward/Apteryx-Game">
-                <svg id="gitlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16 4C9.4 4 4 9.4 4 16 4 21.3 7.4 25.8 12.2 27.4 12.8 27.5 13 27.1 13 26.8 13 26.5 13 25.8 13 24.8 9.7 25.5 9 23.2 9 23.2 8.4 21.8 7.6 21.4 7.6 21.4 6.5 20.7 7.7 20.7 7.7 20.7 8.9 20.8 9.6 21.9 9.6 21.9 10.6 23.7 12.4 23.2 13 22.9 13.2 22.1 13.5 21.6 13.8 21.3 11.1 21 8.3 20 8.3 15.4 8.3 14.1 8.8 13 9.6 12.2 9.5 11.9 9 10.6 9.7 9 9.7 9 10.7 8.7 13 10.2 14 9.9 15 9.8 16 9.8 17 9.8 18 9.9 19 10.2 21.3 8.7 22.3 9 22.3 9 23 10.6 22.5 11.9 22.4 12.2 23.2 13 23.7 14.1 23.7 15.4 23.7 20 20.8 21 18.2 21.3 18.6 21.7 19 22.4 19 23.5 19 25.1 19 26.4 19 26.8 19 27.1 19.2 27.5 19.8 27.4 24.6 25.8 28 21.3 28 16 28 9.4 22.6 4 16 4Z"/></svg>
-             Made with ❤️ by d3ward
+                <svg id="gitlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <path
+                        d="M16 4C9.4 4 4 9.4 4 16 4 21.3 7.4 25.8 12.2 27.4 12.8 27.5 13 27.1 13 26.8 13 26.5 13 25.8 13 24.8 9.7 25.5 9 23.2 9 23.2 8.4 21.8 7.6 21.4 7.6 21.4 6.5 20.7 7.7 20.7 7.7 20.7 8.9 20.8 9.6 21.9 9.6 21.9 10.6 23.7 12.4 23.2 13 22.9 13.2 22.1 13.5 21.6 13.8 21.3 11.1 21 8.3 20 8.3 15.4 8.3 14.1 8.8 13 9.6 12.2 9.5 11.9 9 10.6 9.7 9 9.7 9 10.7 8.7 13 10.2 14 9.9 15 9.8 16 9.8 17 9.8 18 9.9 19 10.2 21.3 8.7 22.3 9 22.3 9 23 10.6 22.5 11.9 22.4 12.2 23.2 13 23.7 14.1 23.7 15.4 23.7 20 20.8 21 18.2 21.3 18.6 21.7 19 22.4 19 23.5 19 25.1 19 26.4 19 26.8 19 27.1 19.2 27.5 19.8 27.4 24.6 25.8 28 21.3 28 16 28 9.4 22.6 4 16 4Z" />
+                    </svg>
+                Made with ❤️ by d3ward
             </a>
-            <div class="lrt_ft"><button onclick="del();"> Reset  </button><button onclick="dismBox();"> Close  </button></div>
+            <div class="lrt_ft"><button onclick="del();"> Reset </button><button onclick="dismBox();"> Close </button>
+            </div>
         </div>
     </div>
-    <div id="lb"><svg id="lbsvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M4 7L4 9 28 9 28 7ZM4 15L4 17 28 17 28 15ZM4 23L4 25 28 25 28 23Z" /></svg></div>
+    <div id="lb"><svg id="lbsvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M4 7L4 9 28 9 28 7ZM4 15L4 17 28 17 28 15ZM4 23L4 25 28 25 28 23Z" /></svg></div>
 </body>
-    <script>
-        var lboard = JSON.parse(localStorage.getItem("lb"));
-        console.log(lboard);
-        if (lboard == null) lboard = [];
-        var theme = parseInt(localStorage.gameTheme);
-        if (!localStorage.gameTheme) {
-            theme = 0;
-            localStorage.gameTheme = JSON.stringify(theme);
+<script>
+    var lboard = JSON.parse(localStorage.getItem("lb"));
+    console.log(lboard);
+    if (lboard == null) lboard = [];
+    var theme = parseInt(localStorage.gameTheme);
+    if (!localStorage.gameTheme) {
+        theme = 0;
+        localStorage.gameTheme = JSON.stringify(theme);
+    }
+    var hs = lboard[0],
+        maxScore = 0;
+    if (hs != undefined) maxScore = hs[0].v;
+    var bodybg = document.getElementById("t");
+    var lbsvg = document.getElementById("lbsvg");
+    var btnTS = document.getElementById("theme-switch");
+    var clrdsnd = document.getElementById("colored-sand");
+    var img2 = document.getElementById("offline-resources-2x");
+    var img1 = document.getElementById("offline-resources-1x");
+    document.getElementById("lb").onclick = () => {
+        document.getElementById("lrt").classList.toggle("show-lrt");
+    };
+    document.getElementById("lrt").addEventListener('click', function (e) {
+        if (e.target == this) dismBox();
+    });
+
+    function setlbdiv() {
+        var txt = '<table>';
+        lboard.forEach(el => {
+            txt += "<tr><td>" + el[0].dt + " </td><td>" + el[0].v + "</td></tr>";
+        });
+        document.getElementById("lrt_body").innerHTML = txt + "</table>";
+    }
+    setlbdiv();
+
+    function setLB(v) {
+        if (v > maxScore) {
+            var today = new Date();
+            var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+            var dateTime = date;
+            maxScore = v;
+            lboard.push([{
+                'v': v,
+                'dt': dateTime
+            }]);
+            lboard.sort(function (a, b) {
+                return b[0].v - a[0].v;
+            });
+            localStorage.setItem("lb", JSON.stringify(lboard));
+            setlbdiv();
         }
-        var hs = lboard[0],maxScore=0;
-        if(hs!=undefined)maxScore = hs[0].v;
-        var bodybg = document.getElementById("t");
-        var lbsvg = document.getElementById("lbsvg");
-        var btnTS = document.getElementById("theme-switch");
-        var clrdsnd = document.getElementById("colored-sand");
-        var img2 = document.getElementById("offline-resources-2x");
-        var img1 = document.getElementById("offline-resources-1x");
-        document.getElementById("lb").onclick = () => {document.getElementById("lrt").classList.toggle("show-lrt");};
-        document.getElementById("lrt").addEventListener('click', function(e) {if (e.target == this)dismBox();});
-        function setlbdiv() {
-            var txt = '<table>';
-            lboard.forEach(el => {txt += "<tr><td>" + el[0].dt + " </td><td>" + el[0].v + "</td></tr>";});
-            document.getElementById("lrt_body").innerHTML = txt + "</table>";
-        }
-        setlbdiv();
-        function setLB(v) {
-            if (v > maxScore) {
-                var today = new Date();
-                var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-                var dateTime = date;
-                maxScore = v;
-                lboard.push([{'v': v,'dt': dateTime}]);
-                lboard.sort(function (a, b) {return b[0].v - a[0].v;});
-                localStorage.setItem("lb", JSON.stringify(lboard));
-                setlbdiv();
-            }
-        }
-        function classicTheme() {
-            clrdsnd.style.display = "none";
-            bodybg.style.background = "#fff";
-            btnTS.style.background = "#fff";
-            btnTS.style.borderColor = "#000";
-            lbsvg.style.fill = "#333";
-            img2.src = "assets/200x_classic.png";
-            img1.src = "assets/100x_classic.png";
-        }
-        function darkTheme() {
-            clrdsnd.style.display = "none";
-            bodybg.style.background = "#333";
-            btnTS.style.background = "#333";
-            lbsvg.style.fill = "#fff";
-            btnTS.style.borderColor = "#fff";
-            img2.src = "assets/200x_dark.png";
-            img1.src = "assets/100x_dark.png";
-        }
-        function amoledTheme() {
-            clrdsnd.style.display = "none";
-            bodybg.style.background = "#000";
-            btnTS.style.background = "#000";
-            btnTS.style.borderColor = "#fff";
-            lbsvg.style.fill = "#fff";
-            img2.src = "assets/200x_dark.png";
-            img1.src = "assets/100x_dark.png";
-        }
-        function colorfulTheme() {
-            clrdsnd.style.display = "inline-block";
-            bodybg.style.background = "#141852";
-            btnTS.style.background = "linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)";
-            btnTS.style.borderColor = "#fff";
-            lbsvg.style.fill = "#fff";
-            img2.src = "assets/200x_color.png";
-            img1.src = "assets/100x_color.png";
-        }
-        function changeTheme() {
-            var rc=document.querySelector("div.runner-container");
-            if(rc)rc.parentNode.removeChild(rc);
-            if (theme > 2) theme = 0;
-            else theme = theme + 1;
-            console.log(" Theme : " + theme);
-            localStorage.gameTheme = theme;
-            rel = true;
-            applyTheme();
-        }
-        function applyTheme() {
-            if (theme == 0) {classicTheme();} 
-            else if (theme == 1) {darkTheme();} 
-            else if (theme == 2) {amoledTheme();}
-            else if (theme == 3) { colorfulTheme();}
-            else {classicTheme();}
-        }
+    }
+
+    function classicTheme() {
+        clrdsnd.style.display = "none";
+        bodybg.style.background = "#fff";
+        btnTS.style.background = "#fff";
+        btnTS.style.borderColor = "#000";
+        lbsvg.style.fill = "#333";
+        img2.src = "assets/200x_classic.png";
+        img1.src = "assets/100x_classic.png";
+    }
+
+    function darkTheme() {
+        clrdsnd.style.display = "none";
+        bodybg.style.background = "#333";
+        btnTS.style.background = "#333";
+        lbsvg.style.fill = "#fff";
+        btnTS.style.borderColor = "#fff";
+        img2.src = "assets/200x_dark.png";
+        img1.src = "assets/100x_dark.png";
+    }
+
+    function amoledTheme() {
+        clrdsnd.style.display = "none";
+        bodybg.style.background = "#000";
+        btnTS.style.background = "#000";
+        btnTS.style.borderColor = "#fff";
+        lbsvg.style.fill = "#fff";
+        img2.src = "assets/200x_dark.png";
+        img1.src = "assets/100x_dark.png";
+    }
+
+    function colorfulTheme() {
+        clrdsnd.style.display = "inline-block";
+        bodybg.style.background = "#141852";
+        btnTS.style.background = "linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)";
+        btnTS.style.borderColor = "#fff";
+        lbsvg.style.fill = "#fff";
+        img2.src = "assets/200x_color.png";
+        img1.src = "assets/100x_color.png";
+    }
+
+    function changeTheme() {
+        var rc = document.querySelector("div.runner-container");
+        if (rc) rc.parentNode.removeChild(rc);
+        if (theme > 2) theme = 0;
+        else theme = theme + 1;
+        console.log(" Theme : " + theme);
+        localStorage.gameTheme = theme;
+        rel = true;
         applyTheme();
-    </script>
-    <script src="index.js"></script>
+    }
+
+    function applyTheme() {
+        if (theme == 0) {
+            classicTheme();
+        } else if (theme == 1) {
+            darkTheme();
+        } else if (theme == 2) {
+            amoledTheme();
+        } else if (theme == 3) {
+            colorfulTheme();
+        } else {
+            classicTheme();
+        }
+    }
+    applyTheme();
+</script>
+<script src="index.js"></script>
+
 </html>

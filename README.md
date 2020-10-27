@@ -1,5 +1,7 @@
 # Apteryx Game
-
+ <img src="src/icon.svg" alt="Kitten"
+	title="A cute kitten" width="100" height="100" style="border:2px solid;border-radius:15px;" />
+    
 A modified version of the t-rex runner game from chrome offline err page.
 This version instead of t-rex has a Kiwi bird , from the genus [Apteryx](https://en.wikipedia.org/wiki/Kiwi)
 
@@ -24,8 +26,8 @@ This version instead of t-rex has a Kiwi bird , from the genus [Apteryx](https:/
 * Added 3 themes : Classic, Dark, Colorful
 * Adding button to switch between themes
 
-_The classic theme of this game is included in [Kiwi Browser](https://kiwibrowser.com)_
+_The classic theme of this game is included in [Kiwi Browser](https://kiwibrowser.com)
 ____
 All rights of the original game's code belong to the Chromium team. [Source from Chromium](https://cs.chromium.org/chromium/src/components/neterror/resources/offline.js?q=t-rex+package:%5Echromium$&dr=C&l=7)
 
-Thanks to [Wayou Liu](https://github.com/wayou) for extracting the game from Chrome's files and making it available on Github - [Link to original repository](https://github.com/wayou/t-rex-runner).
+Thanks to [Wayou Liu](https://github.com/wayou) for extracting the game from Chrome's files and making it available on Github - [Link to original repository](https://github.com/wayou/t-rex-runner)
