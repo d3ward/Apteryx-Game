@@ -1,6 +1,6 @@
 # Apteryx Game
- <img src="src/icon.svg" alt="Kitten"
-	title="A cute kitten" width="100" height="100" style="border:2px solid;border-radius:15px;" />
+ <img src="src/icon.svg" alt="Apteryx"
+	title="Apteryx-Game" width="100" height="100" style="border:2px solid;border-radius:15px;" />
     
 A modified version of the t-rex runner game from chrome offline err page.
 This version instead of t-rex has a Kiwi bird , from the genus [Apteryx](https://en.wikipedia.org/wiki/Kiwi)
